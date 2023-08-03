@@ -9,9 +9,15 @@ const app = express();
 app.use(express.json());
 
 app.use(cors());
-app.use("/api",movieRoutes);
+app.use("/",movieRoutes);
 
 dbConnect();
 
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 8000 ;
+
+//  3 step  heroku
+// if(process.env.NODE_ENV = "production"){
+//     app.use(express.static("frontend/build"))
+// }
+
 app.listen(port,() => console.log(`Listening on port ${port}`));

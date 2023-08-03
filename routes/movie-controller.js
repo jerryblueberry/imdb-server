@@ -2,7 +2,7 @@ const router = require("express").Router();
 const Movie = require("../models/Movie");
 const movies = require("../config/movies.json");
 
-router.get("/movies", async (req, res) => {
+router.get("/", async (req, res) => {
 	try {
 		const page = parseInt(req.query.page) - 1 || 0;
 		const limit = parseInt(req.query.limit) || 5;
